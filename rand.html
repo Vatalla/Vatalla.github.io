@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5">
+    <title>Document</title>
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+
+
+    <head>
+  
+</head>
+<body>
+    <script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyBUogbn_QIiWrk3mTwmJ0fCXGYwUQzSyxs",
+        authDomain: "tugas-akhir-694bd.firebaseapp.com",
+        databaseURL: "https://tugas-akhir-694bd-default-rtdb.firebaseio.com",
+        projectId: "tugas-akhir-694bd",
+        storageBucket: "tugas-akhir-694bd.appspot.com",
+        messagingSenderId: "460796627442",
+        appId: "1:460796627442:web:89d07a0beb987cecd0c36b",
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    function update(){
+        var minVoc = 16,
+        maxVoc = 40,
+        minHum = 30,
+        maxHum = 50,
+        minTemp = 16,
+        maxTemp = 40;
+        Voc = (Math.random() * (maxVoc - minVoc) + minVoc);
+        Hum = (Math.random() * (maxHum - minHum) + minHum);
+        Temp = (Math.random() * (maxTemp - minTemp) + minTemp);
+ 
+        console.log(typeof Voc);
+        console.log(typeof Hum);
+        console.log(typeof Temp);
+
+
+        var vocRef = firebase.database().ref("web/");
+        vocRef.update ({
+            "Voc": Voc,
+            "Temp": Temp,
+            "Hum": Hum
+        });
+        
+    }
+
+    update();
+
+
+    
+      </script>
+   
+</body>
+</html>
