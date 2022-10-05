@@ -28,12 +28,12 @@
     firebase.initializeApp(firebaseConfig);
 
     function update(){
-        var minVoc = 16,
-        maxVoc = 40,
-        minHum = 30,
-        maxHum = 50,
-        minTemp = 16,
-        maxTemp = 40;
+        var minVoc = 0,
+        maxVoc = 2,
+        minHum = 40,
+        maxHum = 60,
+        minTemp = 18,
+        maxTemp = 30;
         Voc = (Math.random() * (maxVoc - minVoc) + minVoc);
         Hum = (Math.random() * (maxHum - minHum) + minHum);
         Temp = (Math.random() * (maxTemp - minTemp) + minTemp);
